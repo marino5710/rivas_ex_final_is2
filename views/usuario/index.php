@@ -3,10 +3,10 @@
 <h1>VALIDACIONES</h1>
 
 <div class="row justify-content-center">
-    <div class="row m-3">
+    <div class="row">
         <div class="col m-3">
             <h1>Información del Usuario de GitHub</h1>
-            <input type="text" id="usuario" placeholder="Ingresa el nombre de usuario de GitHub" />
+            <input type="text" id="usuario" placeholder="Usuario de GitHub" />
             <button name="usuario" id="obtenerUsuarioBtn">Obtener Usuario</button>
             <div id="info-usuario"></div>
         </div>
@@ -14,7 +14,7 @@
     <div class="row m-3">
         <div class="col m-3">
             <h1>Información del País</h1>
-            <input type="text" id="nombre_pais" placeholder="Ingresa el nombre del país" />
+            <input type="text" id="nombre_pais" placeholder="Nombre del país" />
             <button name="usuario" id="obtenerPaisBtn">Obtener Pais</button>
             <div id="info-pais"></div>
         </div>
@@ -22,10 +22,6 @@
     <div class="row">
         <br>
     </div>
-
-
-
-
     <h1 class="text-center">FORMULARIO DE USUARIOS</h1>
     <div class="row justify-content-center">
         <form class="border bg-light shadow rounded p-2" id="usuarioForm">

@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../views/usuario/index.html"><i
+                        <a class="nav-link active" aria-current="page" href="../../views/usuario/index.php"><i
                                 class="bi bi-house-fill me-2"></i>INICIO</a>
                     </li>
             </div>

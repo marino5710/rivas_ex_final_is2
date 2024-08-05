@@ -39,10 +39,10 @@ function obtenerPais() {
                 return;
             }
             const pais = datos[0];
-            const codigoTelefono = pais.idd.root + (pais.idd.suffixes ? pais.idd.suffixes[0] : ''); // Código de teléfono
+            const codigoTelefono = pais.idd.root + (pais.idd.suffixes ? pais.idd.suffixes[0] : '');
             document.getElementById('info-pais').innerHTML = `
                 <p>Código de teléfono: ${codigoTelefono}</p>
-                <img src="${pais.flags.png}" alt="Bandera de ${pais.name.common}" width="100" />
+                <img src="${pais.flags.png}" alt="Bandera de ${pais.name.common}" width="200" />
             `;
             document.getElementById('usuario_codigo_pais').value = codigoTelefono;
         })
@@ -85,7 +85,7 @@ const getUsuarios = async (alerta = 'si') => {
         let contador = 1;
 
         if (respuesta.status === 200) {
-            if (alerta === 'si') {
+            if (alerta) {
                 Swal.mixin({
                     toast: true,
                     position: "top-end",
