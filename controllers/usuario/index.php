@@ -1,5 +1,5 @@
 <?php
-require '../../models/Clientes.php';
+require '../../models/Usuario.php';
 header('Content-Type: application/json; charset=UTF-8');
 
 $metodo = $_SERVER['REQUEST_METHOD'];
@@ -10,31 +10,17 @@ $tipo = $_REQUEST['tipo'];
 try {
     switch ($metodo) {
         case 'POST':
-            $cliente = new Clientes($_POST);
+            $usuario = new Usuarios($_POST);
             switch ($tipo) {
                 case '1':
-                    $ejecucion = $cliente->guardar();
-                    $mensaje = "Guardado correctamente";
-                    break;
-
-                case '2':
-
-                    $ejecucion = $cliente->modificar();
-                    $mensaje = "Modificado correctamente";
-                    break;
-
-                case '3':
-
-                    $ejecucion = $cliente->eliminar();
-                    $mensaje = "Eliminado correctamente";
+                    $ejecucion = $usuario->guardar();
+                    $mensaje = "Usuario Guardado correctamente";
                     break;
 
                 default:
 
                     break;
             }
-
-            
 
             http_response_code(200);
             echo json_encode([
@@ -46,9 +32,9 @@ try {
 
         case 'GET':
             http_response_code(200);
-            $cliente = new Clientes($_GET);
-            $clientes = $cliente->buscar();
-            echo json_encode($clientes);
+            $usuario = new Usuarios($_GET);
+            $usuarios = $usuario->buscar();
+            echo json_encode($usuarios);
             break;
 
         default:

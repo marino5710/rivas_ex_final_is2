@@ -9,7 +9,7 @@ abstract class Conexion
         if (!self::$conexion) {
 
             try {
-                self::$conexion = new PDO("informix:host=host.docker.internal; service=9088;database=ing_soft2; server=informix; protocol=onsoctcp;EnableScrollableCursors=1", "informix", "in4mix");
+                self::$conexion = new PDO("informix:host=host.docker.internal; service=9088;database=final_rivas; server=informix; protocol=onsoctcp;EnableScrollableCursors=1", "informix", "in4mix");
                 self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
                 echo "No hay conexion a la BD";

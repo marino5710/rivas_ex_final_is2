@@ -8,7 +8,6 @@ class Usuarios extends Conexion
     public $usuario_codigo_pais;
     public $usuario_telefono;
     public $usuario_correo;
-    public $usuario_situacion;
 
 
 
@@ -19,11 +18,8 @@ class Usuarios extends Conexion
         $this->usuario_codigo_pais = $args['usuario_codigo_pais'] ?? '';
         $this->usuario_telefono = $args['usuario_telefono'] ?? '';
         $this->usuario_correo = $args['usuario_correo'] ?? '';
-        $this->usuario_situacion = $args['usuario_situacion'] ?? NULL;
 
     }
-
-
 
     // INSERTAR
     public function guardar()
@@ -38,7 +34,7 @@ class Usuarios extends Conexion
     public function buscar()
     {
 
-        $sql = "SELECT * FROM usuarios where usuario_situacion = 1 ";
+        $sql = "SELECT * FROM usuarios ";
         
 
         if ($this->usuario_nombre != '') {
@@ -58,22 +54,6 @@ class Usuarios extends Conexion
         }
 
         $resultado = self::servir($sql);
-        return $resultado;
-    }
-
-
-
-    public function modificar()
-    {
-        $sql = "UPDATE usuarios SET usuario_nombre = '$this->usuario_nombre', usuario_codigo_pais = '$this->usuario_codigo_pais', usuario_telefono = '$this->usuario_telefono', usuario_correo = '$this->usuario_correo' WHERE usuario_id = $this->usuario_id ";
-        $resultado = $this->ejecutar($sql);
-        return $resultado;
-    }
-
-    public function eliminar()
-    {
-        $sql = "UPDATE usuarios SET usuario_situacion = 0 WHERE usuario_id = $this->usuario_id ";
-        $resultado = $this->ejecutar($sql);
         return $resultado;
     }
 
